@@ -74,18 +74,16 @@ char *binary_add (unsigned a, unsigned b, char *binary)
 
 int main()
 {
-    int a = 123;
-    int b = 76;
+    unsigned long long a = 4294967295;
+    unsigned long long b = 4294967295;
 
-    int n = a + b;
+    char *binary = (char *)malloc(128 * sizeof(char)); // Allocate enough space for the binary string
 
-    char *complete_binary = (char *)malloc(32 * sizeof(char));
+    char *result = binary_add(a, b, binary);
 
-    char *result = binary_add(a, b, complete_binary);
+    printf("Binary representation of %llu + %llu is: %s\n", a, b, result);
 
-    printf("Binary representation of %d is: %s\n", n, result);
-
-    free(complete_binary); // Free allocated memory
+    free(binary);
 
     return 0;
 }
