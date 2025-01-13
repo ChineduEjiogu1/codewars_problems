@@ -42,5 +42,7 @@ int main()
     printf("%s", "Please enter a positive power (number): ");
     scanf("%d", &starting_power);
 
-    printf("%d", digPow(number, starting_power));
+    printf("Result is: %d\n", digPow(number, starting_power));
+
+    return 0;
 }
